@@ -29,19 +29,18 @@ Open [http://localhost:3000/](http://localhost:3000/) in your browser.
 
 ### Add application to repository
 
-You need to create an ECS Container Repository beforehand (e.g. `sandbox-ecs`).
-
 ```
 $ aws ecr get-login --region ap-northeast-1
 (Execute `docker login` command)
 
+# Build image.
 $ docker build -t sandbox-ecs .
 
 # Tag image.
 # e.g. docker tag xxx.dkr.ecr.ap-northeast-1.amazonaws.com/sandbox-ecs:latest
 $ docker tag sandbox-ecs:latest {REPOSITORY}:{TAG}
 
-# Push image to AWS repository.
+# Push image to ECR.
 $ docker push sandbox-ecs:latest {REPOSITORY}:{TAG}
 ```
 
