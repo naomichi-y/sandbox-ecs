@@ -23,7 +23,7 @@ $ docker-compose run --rm rails rake db:create
 $ docker-compose run --rm rails rake db:migrate
 $ docker-compose up
 ```
-Open http://localhost:3000/](http://localhost:3000/) in your browser.
+Open [http://localhost:3000/](http://localhost:3000/) in your browser.
 
 ## Deploy to ECS
 
