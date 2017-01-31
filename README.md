@@ -2,6 +2,8 @@
 
 This package is a sample application runs Rails application on [AWS ECS](https://aws.amazon.com/ecs/).
 
+<img src="https://raw.githubusercontent.com/wiki/naomichi-y/sandbox-ecs/images/cowsay.png" />
+
 ## Required tools
 
 * [aws/aws-cli](https://github.com/aws/aws-cli)
