@@ -36,8 +36,7 @@ $ aws ecr get-login --region ap-northeast-1
 # Build image.
 $ docker build -t sandbox-ecs .
 
-# Tag image.
-# e.g. docker tag xxx.dkr.ecr.ap-northeast-1.amazonaws.com/sandbox-ecs:latest
+# Tag image. (e.g. docker tag xxx.dkr.ecr.ap-northeast-1.amazonaws.com/sandbox-ecs:latest)
 $ docker tag sandbox-ecs:latest {REPOSITORY}:{TAG}
 
 # Push image to ECR.
