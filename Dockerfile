@@ -2,8 +2,6 @@ FROM amazonlinux:latest
 MAINTAINER "Naomichi Yamakita" <n.yamakita@gmail.com>
 
 ENV TERM xterm
-ENV RAILS_ENV development
-ENV MYSQL_ROOT_PASSWORD passw0rd
 
 ADD docker/rails/.bashrc /root/.bashrc
 ADD docker/rails/.gemrc /root/.gemrc
