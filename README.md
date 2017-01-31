@@ -15,7 +15,7 @@ This package is a sample application runs Rails application on [AWS ECS](https:/
   * [Amazon Linux Container Image](http://docs.aws.amazon.com/AmazonECR/latest/userguide/amazon_linux_container_image.html)
 * MySQL
 
-## Setup local development environment
+## Setup local environment
 
 ```
 $ docker-compose build
