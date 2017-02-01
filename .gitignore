@@ -26,4 +26,4 @@
 # Application setting.
 .DS_Store
 /docker/mysql/data/*
-!/docker/mysql/data/.keep
+!/docker/mysql/data/.gitkeep

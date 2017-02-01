@@ -19,13 +19,15 @@ This package is a sample application runs Rails application on [AWS ECS](https:/
 
 ```
 $ docker-compose build
+$ docker-compose up
 $ docker-compose run --rm rails rake db:create
 $ docker-compose run --rm rails rake db:migrate
-$ docker-compose up
 ```
 Open [http://localhost:3000/](http://localhost:3000/) in your browser.
 
 ## Deploy to ECS
+
+It's necessary to create ECS clusters and service beforehand.
 
 ### Add application to repository
 
@@ -44,8 +46,6 @@ $ docker push sandbox-ecs:latest {REPOSITORY}:{TAG}
 ```
 
 ### Deploy
-
-It's necessary to create ECS clusters and service beforehand.
 
 ```
 $ bin/ecs-deploy -c sandbox-ecs -n {SERVICE} -i {REPOSITORY}:{TAG}

@@ -3,7 +3,7 @@ services:
   rails:
     container_name: sandbox-ecs-rails
     build: .
-    env_file: docker/.env_development
+    env_file: docker/.env
     volumes:
       - .:/data/app
     depends_on:
@@ -14,7 +14,7 @@ services:
   mysql:
     container_name: sandbox-ecs-mysql
     image: mysql
-    env_file: docker/.env_development
+    env_file: docker/.env
     volumes:
       - ./docker/mysql/data:/var/lib/mysql
       - ./docker/mysql/conf.d:/etc/mysql/conf.d
