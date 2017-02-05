@@ -42,7 +42,7 @@ $ docker build -t sandbox-ecs .
 $ docker tag sandbox-ecs:latest {REPOSITORY}:{TAG}
 
 # Push image to ECR.
-$ docker push sandbox-ecs:latest {REPOSITORY}:{TAG}
+$ docker push {REPOSITORY}:{TAG}
 ```
 
 ### Deploy
