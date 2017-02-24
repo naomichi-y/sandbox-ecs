@@ -3,8 +3,3 @@ services:
   rails:
     container_name: sandbox-ecs-rails
     build: .
-    env_file: docker/.env
-    volumes:
-      - .:/data/app
-    ports:
-      - 3000:3000
