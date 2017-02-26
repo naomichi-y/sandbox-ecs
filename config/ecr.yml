@@ -1,7 +1,6 @@
 default: &default
   rails:
-    dockerfile:
-      context: ..
+    build: ..
 
 development:
   <<: *default
