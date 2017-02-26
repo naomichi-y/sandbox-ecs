@@ -1,0 +1,13 @@
+default: &default
+  rails:
+    dockerfile:
+      context: ..
+
+development:
+  <<: *default
+
+staging:
+  <<: *default
+
+production:
+  <<: *default
