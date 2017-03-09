@@ -1,7 +1,7 @@
 family: sandbox-production
-taskRoleArn: ''
-networkMode: bridge
-containerDefinitions:
+task_role_arn: ''
+network_ode: bridge
+container_definitions:
 - name: rails
   image: 879837989888.dkr.ecr.ap-northeast-1.amazonaws.com/sandbox-rails-production:latest
   memory: 128
