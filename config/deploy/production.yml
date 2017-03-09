@@ -5,9 +5,9 @@ containerDefinitions:
 - name: rails
   image: 879837989888.dkr.ecr.ap-northeast-1.amazonaws.com/sandbox-rails-production:latest
   memory: 128
-  portMappings:
-  - containerPort: 3000
-    hostPort: 0
+  port_mappings:
+  - container_port: 3000
+    host_port: 0
     protocol: tcp
   essential: true
   environment:
@@ -17,9 +17,9 @@ containerDefinitions:
     value: production
   - name: SECRET_KEY_BASE
     value: c04b633d16a360c78852efd6ac53dac0a07abf94982ba02e3bd95a3bd9f021222e134172c9b356ef0a1fcc285c8910708002b510b5c4a54e908a39617ad6d81c
-  readonlyRootFilesystem: false
-  logConfiguration:
-    logDriver: awslogs
+  readonly_root_filesystem: false
+  log_configuration:
+    log_driver: awslogs
     options:
       awslogs-group: sandbox-rails-production
       awslogs-region: ap-northeast-1
