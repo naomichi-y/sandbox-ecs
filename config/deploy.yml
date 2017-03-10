@@ -1,0 +1,13 @@
+ecs_containers:
+  default: &default
+    rails:
+      build: ..
+
+  development:
+    <<: *default
+
+  staging:
+    <<: *default
+
+  production:
+    <<: *default
