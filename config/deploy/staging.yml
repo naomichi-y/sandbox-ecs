@@ -1,0 +1,27 @@
+family: sandbox-staging
+task_role_arn: ''
+network_ode: bridge
+container_definitions:
+- name: rails
+  image: 879837989888.dkr.ecr.ap-northeast-1.amazonaws.com/sandboxecs-rails-staging:latest
+  memory: 512
+  port_mappings:
+  - container_port: 3000
+    host_port: 0
+    protocol: tcp
+  essential: true
+  environment:
+  - name: MYSQL_ROOT_PASSWORD
+    value: ''
+  - name: RAILS_ENV
+    value: staging
+  - name: SECRET_KEY_BASE
+    value: c04b633d16a360c78852efd6ac53dac0a07abf94982ba02e3bd95a3bd9f021222e134172c9b356ef0a1fcc285c8910708002b510b5c4a54e908a39617ad6d81c
+  readonly_root_filesystem: false
+  log_configuration:
+    log_driver: awslogs
+    options:
+      awslogs-group: sandbox-rails-staging
+      awslogs-region: ap-northeast-1
+      awslogs-stream-prefix: application
+
