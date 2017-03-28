@@ -12,7 +12,7 @@ container_definitions:
   essential: true
   environment:
   - name: MYSQL_ROOT_PASSWORD
-    value: ''
+    value: 'passw0rd'
   - name: RAILS_ENV
     value: development
   - name: SECRET_KEY_BASE
