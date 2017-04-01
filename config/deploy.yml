@@ -1,3 +1,5 @@
+cluster: sandbox
+
 auto_deploy:
   branches:
     master: production
