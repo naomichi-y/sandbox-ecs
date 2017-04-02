@@ -6,10 +6,13 @@ services:
     env_file: docker/.env
     volumes:
       - .:/data/app
-    depends_on:
+    links:
       - mysql
+      - fluentd
     ports:
       - 3000:3000
+    logging:
+      driver: fluentd
 
   mysql:
     container_name: sandbox-ecs-mysql
@@ -20,3 +23,12 @@ services:
       - ./docker/mysql/conf.d:/etc/mysql/conf.d
     ports:
       - 3306:3306
+
+  fluentd:
+    container_name: sandbox-ecs-fluentd
+    image: fluent/fluentd
+    env_file: docker/.env
+    volumes:
+      - ./docker/fluentd:/fluentd/etc
+    ports:
+      - 24224:24224
