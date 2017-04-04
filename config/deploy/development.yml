@@ -3,7 +3,7 @@ task_role_arn: ''
 network_ode: bridge
 container_definitions:
 - name: rails
-  image: 879837989888.dkr.ecr.ap-northeast-1.amazonaws.com/sandbox-ecs-rails-development:{{tag}}
+  image: 879837989888.dkr.ecr.ap-northeast-1.amazonaws.com/sandbox-ecs-rails-development:latest
   memory: 384
   port_mappings:
   - container_port: 3000
