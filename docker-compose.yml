@@ -13,6 +13,8 @@ services:
       - 3000:3000
     logging:
       driver: fluentd
+      options:
+        tag: sandbox-ecs-rails
 
   mysql:
     container_name: sandbox-ecs-mysql
