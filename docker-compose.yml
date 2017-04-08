@@ -14,7 +14,7 @@ services:
     logging:
       driver: fluentd
       options:
-        tag: sandbox-ecs-rails
+        tag: sandbox-ecs, development
 
   mysql:
     container_name: sandbox-ecs-mysql
