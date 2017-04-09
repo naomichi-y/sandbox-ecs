@@ -6,6 +6,8 @@ class HomeController < ApplicationController
   end
 
   def logger_error
+    logger = DockerLogger.new(STDOUT)
+    logger.group = 'test'
     logger.error 'Invoke logger error'
     head 200
   end
