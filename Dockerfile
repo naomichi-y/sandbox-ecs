@@ -9,14 +9,14 @@ ADD docker/rails/gemrc /usr/local/etc/gemrc
 
 RUN yum update -y && \
   yum install -y cowsay lolcat vim sysstat git zip bzip2 gcc gcc-c++ readline-devel openssl-devel zlib-devel sqlite-devel mysql-devel && \
-  curl -O http://ftp.ruby-lang.org/pub/ruby/2.3/ruby-2.3.1.tar.gz && \
-  tar zxvf ruby-2.3.1.tar.gz && \
-  cd ruby-2.3.1 && \
+  curl -O http://ftp.ruby-lang.org/pub/ruby/2.4/ruby-2.4.1.tar.gz && \
+  tar zxvf ruby-2.4.1.tar.gz && \
+  cd ruby-2.4.1 && \
   ./configure --disable-install-doc && \
   make && \
   make install && \
   cd .. && \
-  rm -r ruby-2.3.1 ruby-2.3.1.tar.gz
+  rm -r ruby-2.4.1 ruby-2.4.1.tar.gz
 RUN gem install bundler
 
 ENV APP_ROOT_DIR /data/app

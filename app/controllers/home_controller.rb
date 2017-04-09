@@ -1,5 +1,12 @@
 class HomeController < ApplicationController
-  def index; end
+  def index
+    # l = DockerLogger.new(STDOUT, 0, level: :info)
+    # l.log_group = 'test'
+    # l << "write\nmessage"
+    # l.info("WRITE")
+    #l.info(Logger::VERSION)
+    #l.add(Logger::Severity::DEBUG, 'aaa')
+  end
 
   def raise_error
     raise 'Invoke raise error'
