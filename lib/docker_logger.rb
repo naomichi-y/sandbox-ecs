@@ -21,9 +21,9 @@ class DockerLogger < ActiveSupport::Logger
   private
 
   def decorate(message)
-    if @stream_output
+    if @stream_output && ENV.fetch('DOCKER_LOG_DISABLE_DECORATE', '').empty?
       message = message.gsub("\n", ' ') unless message.nil?
-      message = message + " #log_group=#{@log_group}"
+      message = message.to_s + ", log_group=#{@log_group}"
     end
 
     message
