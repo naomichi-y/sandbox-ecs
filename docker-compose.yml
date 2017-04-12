@@ -30,7 +30,7 @@ services:
     container_name: sandbox-ecs-fluentd
     build: ./docker/fluentd
     env_file: docker/.env
-    # /usr/bin/ruby /usr/bin/fluentd -c /fluentd/etc/fluent.conf -p /fluentd/plugins
+    # /usr/bin/ruby /usr/local/bin/fluentd -c /fluentd/etc/fluent.conf -p /fluentd/plugins
     command: sleep 3600
     volumes:
       - ./docker/fluentd:/fluentd/etc
