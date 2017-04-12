@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
 
   def logger_error
-    logger.error 'Invoke logger error'
+    logger.error "A\nB"
     head 200
   end
 end

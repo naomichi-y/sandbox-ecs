@@ -14,7 +14,7 @@ services:
     logging:
       driver: fluentd
       options:
-        tag: sandbox-ecs, development
+        tag: rails
 
   mysql:
     container_name: sandbox-ecs-mysql
@@ -28,8 +28,10 @@ services:
 
   fluentd:
     container_name: sandbox-ecs-fluentd
-    image: fluent/fluentd
+    build: ./docker/fluentd
     env_file: docker/.env
+    # /usr/bin/ruby /usr/bin/fluentd -c /fluentd/etc/fluent.conf -p /fluentd/plugins
+    command: sleep 3600
     volumes:
       - ./docker/fluentd:/fluentd/etc
     ports:
