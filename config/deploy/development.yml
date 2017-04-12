@@ -21,5 +21,5 @@ container_definitions:
   log_configuration:
     log_driver: fluentd
     options:
-      fluent-tag: rails
+      fluentd-tag: rails
       fluentd-address: test.com:24224
