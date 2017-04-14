@@ -50,5 +50,3 @@ $ docker push {REPOSITORY}:{TAG}
 ```
 $ bin/ecs-deploy -c sandbox-ecs -n {SERVICE} -i {REPOSITORY}:{TAG}
 ```
-
-test
