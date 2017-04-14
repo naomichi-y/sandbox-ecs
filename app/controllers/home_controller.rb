@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
 
   def logger_error
-    logger.error "A\nB"
+    logger.error "AAAAAA\nB"
     head 200
   end
 end

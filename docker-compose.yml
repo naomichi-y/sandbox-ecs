@@ -14,7 +14,7 @@ services:
     logging:
       driver: fluentd
       options:
-        tag: rails
+        tag: docker.rails
 
   mysql:
     container_name: sandbox-ecs-mysql
