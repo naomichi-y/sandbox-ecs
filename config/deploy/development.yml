@@ -22,3 +22,4 @@ container_definitions:
     log_driver: fluentd
     options:
       fluentd-address: 52.198.194.252:24224
+      fluentd-tag: docker.rails
