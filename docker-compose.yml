@@ -14,7 +14,8 @@ services:
     logging:
       driver: fluentd
       options:
-        fluentd-address: localhost:24224
+        # /usr/bin/ruby /usr/local/bin/fluentd -c /fluentd/etc/fluent.conf -p /fluentd/plugins
+        # fluentd-address: 52.198.194.252:24224
         tag: docker.rails
 
   mysql:
@@ -26,15 +27,3 @@ services:
       - ./docker/mysql/conf.d:/etc/mysql/conf.d
     ports:
       - 3306:3306
-
-  # fluentd:
-  #   container_name: sandbox-ecs-fluentd
-  #   build: ./docker/fluentd
-  #   env_file: docker/.env
-  #   # /usr/bin/ruby /usr/local/bin/fluentd -c /fluentd/etc/fluent.conf -p /fluentd/plugins
-  #   command: sleep 3600
-  #   volumes:
-  #     - ./docker/fluentd:/fluentd/etc
-  #   ports:
-  #     - 8080:80
-  #     - 24224:24224
