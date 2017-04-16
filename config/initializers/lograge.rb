@@ -1,6 +1,6 @@
 Rails.application.configure do
   config.lograge.logger = ActiveSupport::Logger.new(STDOUT)
-  config.lograge.enabled = false
+  config.lograge.enabled = true
   config.lograge.keep_original_rails_log = true
   config.lograge.formatter = Lograge::Formatters::Logstash.new
 
