@@ -19,9 +19,8 @@ container_definitions:
     value: 124f3xzg0k3izywaekoj1hprjqy2infg14ekbzp7yb6cvjr9ycl6g4kpoapq7ykk8evciev92ahpogo2p6u84fb1rx9ye1j3495y432jhaw5ihzgbj6za7dsvs6h1xyv 
   readonly_root_filesystem: false
   log_configuration:
-    log_driver: awslogs
+    log_driver: fluentd
     options:
-      awslogs-group: sandbox-rails-staging
-      awslogs-region: ap-northeast-1
-      awslogs-stream-prefix: application
-
+      fluentd-address: internal-log-production-113789567.ap-northeast-1.elb.amazonaws.com:24224
+      tag: docker.sandbox_ecs_rails_stating
+      fluentd-async-connect: "true"
