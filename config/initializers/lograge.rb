@@ -10,7 +10,7 @@ Rails.application.configure do
       remote_ip: event.payload[:remote_ip],
       original_fullpath: event.payload[:original_fullpath],
       useragent: event.payload[:useragent],
-      time: event.time
+      timestamp: event.time
     }
   end
 end
