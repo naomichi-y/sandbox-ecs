@@ -18,7 +18,7 @@ Rails.application.configure do
       e = event.payload[:exception_object]
       data[:exception_class] = e.class.to_s
       data[:exception_message] = e.message
-      data[:stacktrace] = "#{e.class}: #{e.message}\n" + (e.backtrace || []).join("\n")
+      data[:backtrace] = e.backtrace
     end
 
     data

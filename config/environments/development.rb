@@ -35,7 +35,7 @@ Rails.application.configure do
   config.active_support.deprecation = :log
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.log_formatter = ::Logger::Formatter.new
+  config.log_formatter = LogJsonFormatter.new
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
