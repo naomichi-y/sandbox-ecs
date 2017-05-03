@@ -7,8 +7,7 @@ Rails.application.configure do
   config.lograge.custom_options = lambda do |event|
     data = {
       uuid: event.payload[:uuid],
-      host: event.payload[:host],
-      original_fullpath: event.payload[:original_fullpath],
+      url: event.payload[:url],
       remote_ip: event.payload[:remote_ip],
       referer: event.payload[:referer],
       user_agent: event.payload[:user_agent]

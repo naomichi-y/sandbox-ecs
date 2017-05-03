@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get 'fatal_error', to: 'home#fatal_error'
   get 'logger_error', to: 'home#logger_error'
 
+  match '/', controller: 'application', action: 'render_404', via: :all
   match '*path', controller: 'application', action: 'render_404', via: :all
 end

@@ -5,8 +5,7 @@ class ApplicationController < ActionController::Base
     super
 
     payload[:uuid] = request.uuid
-    payload[:host] = request.host
-    payload[:original_fullpath] = request.original_fullpath # @todo
+    payload[:url] = request.url
     payload[:referer]  = request.referer
     payload[:remote_ip] = request.remote_ip
     payload[:user_agent] = request.user_agent
