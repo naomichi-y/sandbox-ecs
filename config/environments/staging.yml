@@ -69,7 +69,7 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.log_formatter = LogJsonFormatter.new
+  config.log_formatter = DockerFluentLogger::Formatter::Json.new
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'

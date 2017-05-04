@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'docker-fluent-logger'
 gem 'jquery-rails'
-gem 'lograge'
-gem 'logstash-event'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'sass-rails', '~> 5.0'
