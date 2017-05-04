@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'docker-fluent-logger'
+gem 'docker-fluent-logger', '0.0.3'
 gem 'jquery-rails'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
