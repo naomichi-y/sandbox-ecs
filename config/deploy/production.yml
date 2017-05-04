@@ -17,6 +17,8 @@ container_definitions:
     value: production
   - name: SECRET_KEY_BASE
     value: c04b633d16a360c78852efd6ac53dac0a07abf94982ba02e3bd95a3bd9f021222e134172c9b356ef0a1fcc285c8910708002b510b5c4a54e908a39617ad6d81c
+  - name: RAILS_LOG_TO_STDOUT
+    value: enabled
   readonly_root_filesystem: false
   log_configuration:
     log_driver: fluentd
