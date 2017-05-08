@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root to: 'home#index'
   get 'raise_error', to: 'home#raise_error'
+  get 'fatal_error', to: 'home#fatal_error'
   get 'logger_error', to: 'home#logger_error'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  match '/', controller: 'application', action: 'render_404', via: :all
+  match '*path', controller: 'application', action: 'render_404', via: :all
 end

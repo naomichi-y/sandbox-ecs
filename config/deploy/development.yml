@@ -4,7 +4,7 @@ network_ode: bridge
 container_definitions:
 - name: rails
   image: 879837989888.dkr.ecr.ap-northeast-1.amazonaws.com/sandbox-ecs-rails-development:{{tag}}
-  memory: 384
+  memory: 386
   port_mappings:
   - container_port: 3000
     host_port: 0
@@ -17,11 +17,12 @@ container_definitions:
     value: development
   - name: SECRET_KEY_BASE
     value: wasq6bvp9ugf46eawmt2k6n855optipw2afqirfpemozz6jbxvdnzemgfsnjf2pdfvdx9t2lzh9hwp2g9nus2il2q81y170idxmdezeqj1jtm6llnkny3igxeyha7ujj
+  - name: RAILS_LOG_TO_STDOUT
+    value: enabled
   readonly_root_filesystem: false
   log_configuration:
-    log_driver: awslogs
+    log_driver: fluentd
     options:
-      awslogs-group: sandbox-rails-development
-      awslogs-region: ap-northeast-1
-      awslogs-stream-prefix: application
-
+      fluentd-address: internal-log-production-113789567.ap-northeast-1.elb.amazonaws.com:24224
+      fluentd-async-connect: "true"
+      tag: docker.sandbox_ecs_rails_development
