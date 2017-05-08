@@ -1,5 +1,3 @@
-require 'logstash-logger'
-
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -78,7 +76,7 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?
-    config.logger = LogStashLogger.new(type: :stdout)
+    config.logger = DockerFluentLogger.create
   end
 
   # Do not dump schema after migrations.

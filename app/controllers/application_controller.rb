@@ -12,13 +12,13 @@ class ApplicationController < ActionController::Base
     payload[:user_agent] = request.user_agent
   end
 
-  def render_404(exception = nil)
+  def render_404(e = nil)
     @title = '404 Page Not Found'
     render template: 'errors/error', status: 404, layout: 'application'
   end
 
-  def render_500(exception = nil)
-    logger.fatal(exception.to_s + ' ' + exception.backtrace.to_s)
+  def render_500(e = nil)
+    logger.fatal(e.to_s + ' ' + e.backtrace.to_s)
 
     @title = '500 Internal server error'
     render template: 'errors/error', status: 500, layout: 'application'
