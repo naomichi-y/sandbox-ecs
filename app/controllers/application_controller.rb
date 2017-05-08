@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  rescue_from Exception, with: :render_500 unless Rails.env.production?
 
   def append_info_to_payload(payload)
     super
@@ -14,5 +15,12 @@ class ApplicationController < ActionController::Base
   def render_404(exception = nil)
     @title = '404 Page Not Found'
     render template: 'errors/error', status: 404, layout: 'application'
+  end
+
+  def render_500(exception = nil)
+    logger.fatal(exception.to_s + ' ' + exception.backtrace.to_s)
+
+    @title = '500 Internal server error'
+    render template: 'errors/error', status: 500, layout: 'application'
   end
 end

@@ -44,9 +44,7 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?
-    logger           = LogStashLogger.new(type: :stdout)
-    logger.formatter = config.log_formatter
-    config.logger = ActiveSupport::TaggedLogging.new(logger)
+    config.logger = LogStashLogger.new(type: :stdout)
   end
 
   # Raise an error on page load if there are pending migrations.
