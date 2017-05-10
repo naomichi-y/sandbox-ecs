@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   include DockerFluentLogger::Payload
 
   protect_from_forgery with: :exception
-  rescue_from Exception, with: :render_500 unless Rails.env.production?
+  rescue_from Exception, with: :render_500 if Rails.env.production?
 
   def render_404(e = nil)
     @title = '404 Page Not Found'
