@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  rescue_from Exception, with: :render_500 unless Rails.env.production?
+  rescue_from Exception, with: :render_500 if Rails.env.production?
 
   def append_info_to_payload(payload)
     super
