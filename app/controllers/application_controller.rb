@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
     logger.fatal(e.to_s + ' ' + e.backtrace.to_s)
 
     @title = '500 Internal server error'
-    render template: 'errors/error', status: 500, layout: 'application'
+
+    respond_to do |format|
+      format.html { render template: 'errors/error', status: 500, layout: 'application' }
+      format.all { render body: '', head: 500 }
+    end
   end
 end
