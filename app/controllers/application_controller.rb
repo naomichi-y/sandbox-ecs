@@ -10,9 +10,8 @@ class ApplicationController < ActionController::Base
   end
 
   def render_500(e = nil)
-    logger.fatal(e.to_s + ' ' + e.backtrace.to_s)
-
     @title = '500 Internal server error'
+    append_payload_error(e)
 
     respond_to do |format|
       format.html { render template: 'errors/error', status: 500, layout: 'application' }
