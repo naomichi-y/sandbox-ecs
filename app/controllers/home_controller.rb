@@ -5,18 +5,18 @@ class HomeController < ApplicationController
     raise 'Invoke raise error'
   end
 
-  def fatal_error
-    begin
-      4/0
-    rescue => e
-      logger.fatal(e.to_s)
-      logger.fatal(e.backtrace)
-    end
+  def logger_warn
+    logger.error "LOGGER\nERROR"
     head 200
   end
 
   def logger_error
-    logger.error "AAA\nBBB"
+    logger.error "LOGGER\nWARN"
+    head 200
+  end
+
+  def logger_fatal
+    logger.error "LOGGER\nERROR"
     head 200
   end
 end

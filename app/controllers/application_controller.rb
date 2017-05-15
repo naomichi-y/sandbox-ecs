@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def render_500(e = nil)
     @title = '500 Internal server error'
-    append_payload_error(e)
+    append_payload_error(e) if e
 
     respond_to do |format|
       format.html { render template: 'errors/error', status: 500, layout: 'application' }
