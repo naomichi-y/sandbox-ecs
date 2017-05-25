@@ -16,7 +16,7 @@ class HomeController < ApplicationController
   end
 
   def logger_fatal
-    logger.error "LOGGER\nERROR"
+    logger.fatal "LOGGER\nERROR"
     head 200
   end
 end
