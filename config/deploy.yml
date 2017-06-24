@@ -6,7 +6,7 @@ auto_deploy:
 
 ecs_containers:
   default: &default
-    rails:
+    rails2:
       build: ..
 
   development:
