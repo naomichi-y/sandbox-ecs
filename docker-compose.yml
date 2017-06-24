@@ -10,11 +10,11 @@ services:
       - mysql
     ports:
       - 3000:3000
-    logging:
-      driver: fluentd
-      options:
-        # /usr/bin/ruby /usr/local/bin/fluentd -c /fluentd/etc/fluent.conf -p /fluentd/plugins
-        tag: docker.sandbox_ecs_rails_development
+    # logging:
+    #   driver: fluentd
+    #   options:
+    #     # /usr/bin/ruby /usr/local/bin/fluentd -c /fluentd/etc/fluent.conf -p /fluentd/plugins
+    #     tag: docker.sandbox_ecs_rails_development
   mysql:
     container_name: sandbox-ecs-mysql
     image: mysql

@@ -5,6 +5,7 @@ container_definitions:
 - name: rails
   image: 879837989888.dkr.ecr.ap-northeast-1.amazonaws.com/sandbox-ecs-rails-development:{{tag}}
   memory: 386
+  command: "curl http:monelytics.me/?test"
   port_mappings:
   - container_port: 3000
     host_port: 0
