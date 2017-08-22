@@ -24,6 +24,6 @@ container_definitions:
     log_driver: fluentd
     options:
       # fluentd-address: internal-log-production-113789567.ap-northeast-1.elb.amazonaws.com:24224
-      fluentd-address: sandbox-development-548377614.ap-northeast-1.elb.amazonaws.com:24224
+      fluentd-address: internal-log-development-31264653.ap-northeast-1.elb.amazonaws.com:24224
       fluentd-async-connect: "true"
       tag: docker.sandbox_ecs_rails_development
