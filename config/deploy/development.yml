@@ -3,7 +3,6 @@ task_role_arn: ''
 network_ode: bridge
 container_definitions:
 - name: rails
-  host: rails
   image: 879837989888.dkr.ecr.ap-northeast-1.amazonaws.com/sandbox-ecs-rails-development:{{tag}}
   memory: 386
   port_mappings:
@@ -31,7 +30,6 @@ container_definitions:
       fluentd-async-connect: "true"
       tag: docker.sandbox_ecs_rails_development
 - name: fluentd
-  host: fluentd
   image: 879837989888.dkr.ecr.ap-northeast-1.amazonaws.com/sandbox-ecs-fluentd-development:{{tag}}
   memory: 256
   port_mappings:
