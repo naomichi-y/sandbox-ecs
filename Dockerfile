@@ -27,5 +27,5 @@ COPY Gemfile.lock $APP_ROOT_DIR/Gemfile.lock
 RUN bundle config --global silence_root_warning 1 && bundle install
 COPY . $APP_ROOT_DIR
 
-COPY ./docker/rails/start-server.sh /usr/local/bin/start-server.sh
-CMD ["/usr/local/bin/start-server.sh"]
+COPY ./etc/docker/rails/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+CMD ["/usr/local/bin/docker-entrypoint.sh"]
