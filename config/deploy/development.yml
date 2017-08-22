@@ -28,7 +28,7 @@ container_definitions:
       fluentd-async-connect: "true"
       tag: docker.sandbox_ecs_rails_development
 - name: fluentd
-  image: 879837989888.dkr.ecr.ap-northeast-1.amazonaws.com/sandbox-ecs-rails-development:{{tag}}
+  image: 879837989888.dkr.ecr.ap-northeast-1.amazonaws.com/sandbox-ecs-fluentd-development:{{tag}}
   memory: 256
   essential: true
   readonly_root_filesystem: false
