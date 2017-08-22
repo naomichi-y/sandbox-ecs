@@ -27,4 +27,4 @@ container_definitions:
       fluentd-address: internal-log-development-31264653.ap-northeast-1.elb.amazonaws.com:24224
       fluentd-async-connect: "true"
       tag: docker.sandbox_ecs_rails_development
-      fluentd-retry-wait: "5"
+      # fluentd-retry-wait: "5"
