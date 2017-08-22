@@ -8,6 +8,8 @@ ecs_containers:
   default: &default
     rails:
       build: ..
+    fluentd:
+      build: ../etc/docker/fluentd
 
   development:
     <<: *default
