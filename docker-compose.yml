@@ -13,7 +13,7 @@ services:
     logging:
       driver: fluentd
       options:
-        fluentd-address: localhost
+        fluentd-address: localhost:24224
         tag: docker.sandbox_ecs_rails_development
   mysql:
     container_name: sandbox-ecs-mysql
@@ -30,3 +30,7 @@ services:
     env_file: .env
     ports:
       - 24224:24224
+networks:
+  default:
+    external:
+      name: nichigaslog_default
