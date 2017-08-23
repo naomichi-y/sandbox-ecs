@@ -30,7 +30,3 @@ services:
     env_file: .env
     ports:
       - 24224:24224
-networks:
-  default:
-    external:
-      name: nichigaslog_default
