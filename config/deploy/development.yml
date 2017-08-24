@@ -20,21 +20,21 @@ container_definitions:
   - name: RAILS_LOG_TO_STDOUT
     value: enabled
   readonly_root_filesystem: false
-  # links:
-  # - fluentd
+  links:
+  - fluentd
   log_configuration:
     log_driver: fluentd
     options:
-      # fluentd-address: localhost:24224
-      fluentd-address: log.private.nichigas.co.jp:24224
+      fluentd-address: localhost:24224
+      # fluentd-address: log.private.nichigas.co.jp:24224
       fluentd-async-connect: "true"
       tag: docker.sandbox_ecs_rails_development
-# - name: fluentd
-#   image: 879837989888.dkr.ecr.ap-northeast-1.amazonaws.com/sandbox-ecs-fluentd-development:{{tag}}
-#   memory: 256
-#   port_mappings:
-#   - container_port: 24224
-#     host_port: 24224
-#     protocol: tcp
-#   essential: true
-#   readonly_root_filesystem: false
+- name: fluentd
+  image: 879837989888.dkr.ecr.ap-northeast-1.amazonaws.com/sandbox-ecs-fluentd-development:{{tag}}
+  memory: 256
+  port_mappings:
+  - container_port: 24224
+    host_port: 24224
+    protocol: tcp
+  essential: true
+  readonly_root_filesystem: false
