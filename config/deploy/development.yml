@@ -26,8 +26,7 @@ container_definitions:
     log_driver: fluentd
     options:
       # fluentd-address: localhost:24224
-      # fluentd-address: log.private.nichigas.co.jp:24224
-      fluentd-address: 172.16.3.123:24224
+      fluentd-address: log.private.nichigas.co.jp:24224
       fluentd-async-connect: "true"
       tag: docker.sandbox_ecs_rails_development
 # - name: fluentd
