@@ -20,8 +20,8 @@ container_definitions:
   - name: RAILS_LOG_TO_STDOUT
     value: enabled
   readonly_root_filesystem: false
-  links:
-  - fluentd
+  # links:
+  # - fluentd
   log_configuration:
     log_driver: fluentd
     options:
