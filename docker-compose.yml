@@ -10,11 +10,11 @@ services:
       - mysql
     ports:
       - 3000:3000
-    # logging:
-    #   driver: fluentd
-    #   options:
-    #     fluentd-address: localhost:24224
-    #     tag: docker.sandbox_ecs_rails_development
+    logging:
+      driver: fluentd
+      options:
+        fluentd-address: localhost:24224
+        tag: docker.sandbox_ecs_rails_development
   mysql:
     container_name: sandbox-ecs-mysql
     image: mysql
@@ -24,9 +24,3 @@ services:
       - ./etc/docker/mysql/conf.d:/etc/mysql/conf.d
     ports:
       - 3306:3306
-  # fluentd:
-  #   container_name: sandbox-ecs-fluentd
-  #   build: ./etc/docker/fluentd
-  #   env_file: .env
-  #   ports:
-  #     - 24224:24224
