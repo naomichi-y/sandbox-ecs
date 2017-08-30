@@ -3,7 +3,7 @@ services:
   rails:
     container_name: sandbox-ecs-rails
     build: .
-    env_file: docker/.env
+    env_file: .env
     volumes:
       - .:/data/app
     links:
@@ -13,14 +13,13 @@ services:
     logging:
       driver: fluentd
       options:
-        # /usr/bin/ruby /usr/local/bin/fluentd -c /fluentd/etc/fluent.conf -p /fluentd/plugins
         tag: docker.sandbox_ecs_rails_development
   mysql:
     container_name: sandbox-ecs-mysql
     image: mysql
-    env_file: docker/.env
+    env_file: .env
     volumes:
-      - ./docker/mysql/data:/var/lib/mysql
-      - ./docker/mysql/conf.d:/etc/mysql/conf.d
+      - ./etc/docker/mysql/data:/var/lib/mysql
+      - ./etc/docker/mysql/conf.d:/etc/mysql/conf.d
     ports:
       - 3306:3306
