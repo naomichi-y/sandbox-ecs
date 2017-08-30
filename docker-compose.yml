@@ -13,7 +13,6 @@ services:
     logging:
       driver: fluentd
       options:
-        fluentd-address: localhost:24224
         tag: docker.sandbox_ecs_rails_development
   mysql:
     container_name: sandbox-ecs-mysql
